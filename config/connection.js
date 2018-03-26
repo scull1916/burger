@@ -13,7 +13,7 @@ var connection = mysql.createConnection
 //Make connection
 connection.connect(function(err)
 {
-	if err()
+	if (err)
 	{
 		console.log("error connecting: " + err.stack);
 		return;

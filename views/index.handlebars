@@ -2,6 +2,14 @@
 
 <h2>Menu of Burgers</h2>
 
+	<ul>
+		{{#each burgers}} {{!-- pulls from CRUD functions in burger.js --}}
+			{{#unless devoured}}
+				{{burgers/burger-block devoured=true}}
+			{{/unless}}
+		{{/each}}
+	</ul>
+
 	<button type="button">Devour it!</button>
 
 
@@ -9,6 +17,20 @@
 
 
 <h2>Build A Burger</h2>
+	<form class="create-form">
+	   <div class="form-group">
+	        <label for="ba">Burger Name:</label>
+	        <input type="text" id="ba" name="name">
+	    </div>
+
+	    <div class="form-group">
+	         <label for="devoured">Devoured?</label><br>     
+	         <input type="radio" name="devoured" value="1" checked> YUM!<br>
+	         <input type="radio" name="devoured" value="0"> Have one!
+	    </div>   
+
+	    <button type="submit">Add Burger</button> 
+	</form>
 
 
 	<button type="button">Build it!</button>
