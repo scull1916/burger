@@ -7,13 +7,13 @@ var PORT = process.env.PORT || 8080;
 var app = express();
 
 //Serve static content for the app from the "assets" directory (in the "public" directory)
-app.use(express.static("assets"));
+app.use(express.static("public"));
 
 //parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //parse application/json
-app.use(bodyParser.json);
+app.use(bodyParser.json());
 
 //set handlebars
 var exphbs = require("express-handlebars");
